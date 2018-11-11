@@ -1,6 +1,13 @@
 <html>
   <head>
+    <meta charset="UTF-8">
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
     <style>
     svg {
     font-family: Sans-Serif, Arial;
@@ -21,10 +28,27 @@
 .title-text {
   font-size: 12px;
 }
+
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
     </style>
   </head>
   <body>
-    <div id="chart"></div>
+      <div class="container">
+        <h1>HN jobs stats</h1>
+          <div>
+            <div id="chart"></div>
+          </div>
+          <div>
+              <select id="categories" class="form-select select-sm" onchange="createGraph()">
+                <option value="english">english</option>
+                <option value="nice">nice</option>
+              </select>
+          </div>
+        </div>
     <script src="graphic.js"></script>
   </body>
 </html>
