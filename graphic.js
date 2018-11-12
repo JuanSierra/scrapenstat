@@ -1,10 +1,31 @@
 //D3 work Credits to @zakariachowdhury 
+var stats; 
+
 $.getJSON('stats.json', function(data) {
   stats = data.stats;
+  extractCategories();
   createGraph();
 });
 
-var stats; 
+function extractCategories(){
+  var uniqueArray = function(arrArg) {
+    return arrArg.filter(function(elem, pos,arr) {
+      return arr.indexOf(elem) == pos;
+    });
+  };
+
+  var categories = uniqueArray(stats.map(function(item){
+    return item.categories.split(" ");
+  }).flat());
+
+  var category = null;
+  var opt = null;
+  for(var c in categories){
+    category = categories[c];
+    opt = new Option(category, category);
+    $("#categories").append(opt);
+  }
+}
 
 function createGraph(){
     var category = $("#categories").val();
