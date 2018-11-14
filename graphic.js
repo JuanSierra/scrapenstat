@@ -1,10 +1,12 @@
 //D3 work Credits to @zakariachowdhury 
 var stats;
+window.addEventListener("resize", createGraph);
 
 $.getJSON('stats.json', function(data) {
   stats = data.stats;
   extractCategories();
   createGraph();
+  
 });
 
 function createConventions(data){
@@ -50,8 +52,10 @@ function createGraph(){
  
     createConventions(data);
 
-    var width = 500;
-    var height = 300;
+  // Use the extracted size to set the size of an SVG element.
+
+    var width =  $("#chart")[0].clientWidth;
+    var height = $("#chart")[0].clientHeight;
     var margin = 50;
     var duration = 250;
     
