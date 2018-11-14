@@ -1,11 +1,23 @@
 //D3 work Credits to @zakariachowdhury 
-var stats; 
+var stats;
 
 $.getJSON('stats.json', function(data) {
   stats = data.stats;
   extractCategories();
   createGraph();
 });
+
+function createConventions(data){
+  var name = null;
+  $("#convs").empty();
+  var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+  for(var c in data){
+    name = data[c].name;
+    $("#convs").append($("<li>").text(name));
+    $("#convs li:last-child").prepend($("<span>").css("color", color(c)).html("&#9632;"));
+  }
+}
 
 function extractCategories(){
   var uniqueArray = function(arrArg) {
@@ -17,7 +29,7 @@ function extractCategories(){
   var categories = uniqueArray(stats.map(function(item){
     return item.categories.split(" ");
   }).flat());
-
+ 
   var category = null;
   var opt = null;
   for(var c in categories){
@@ -32,9 +44,12 @@ function createGraph(){
     $("#chart").addClass("loading loading-lg");
     //deep copy
     var data = JSON.parse(JSON.stringify(stats));
-    var data = data.filter(function(item){
+    data = data.filter(function(item){
       return item.categories.indexOf(category) != -1;
     });
+ 
+    createConventions(data);
+
     var width = 500;
     var height = 300;
     var margin = 50;
@@ -68,7 +83,6 @@ function createGraph(){
       });
     });
     
-    
     /* Scale */
     var xScale = d3.scaleTime()
       .domain(d3.extent(data[0].values, d => d.date))
@@ -79,14 +93,13 @@ function createGraph(){
       .range([height-margin, 0]);
     
     var color = d3.scaleOrdinal(d3.schemeCategory10);
-    
+
     /* Add SVG */
     var svg = d3.select("#chart").append("svg")
       .attr("width", (width+margin)+"px")
       .attr("height", (height+margin)+"px")
       .append('g')
       .attr("transform", `translate(${margin}, ${margin})`);
-    
     
     /* Add line into SVG */
     var line = d3.line()
@@ -137,7 +150,6 @@ function createGraph(){
             .style("cursor", "none");
         });
     
-    
     /* Add circles in the line */
     lines.selectAll("circle-group")
       .data(data).enter()
@@ -180,7 +192,6 @@ function createGraph(){
               .duration(duration)
               .attr("r", circleRadius);  
           });
-    
     
     /* Add Axis into SVG */
     var xAxis = d3.axisBottom(xScale).ticks(xTicks);

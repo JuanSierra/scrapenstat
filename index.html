@@ -34,13 +34,31 @@
   align-items: center;
   flex-direction: column;
 }
+
+.graph-container{
+  display: flex;
+  align-items: top;
+  flex-direction: row;
+}
+
+#convs{
+  list-style-type: none;
+}
+
+#convs span{
+  margin-right: 3px;
+}
     </style>
   </head>
   <body>
       <div class="container">
         <h1>HN jobs stats</h1>
-          <div>
+          <div class="graph-container">
             <div id="chart"></div>
+            <div>
+              <ul id="convs">
+              </ul>
+            </div>
           </div>
           <div>
               <select id="categories" class="form-select select-sm" onchange="createGraph()">
