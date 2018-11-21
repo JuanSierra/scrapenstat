@@ -55,6 +55,7 @@ function createGraph(){
   // Use the extracted size to set the size of an SVG element.
 
     var width =  $("#chart")[0].clientWidth;
+    console.log($("#chart")[0].clientWidth)
     var height = $("#chart")[0].clientHeight;
     var margin = 50;
     var duration = 250;
@@ -213,7 +214,7 @@ function createGraph(){
       .attr("y", 15)
       .attr("transform", "rotate(-90)")
       .attr("fill", "#000")
-      .text("Total values");
+      .text("      Hits");
 
       $("#chart").removeClass("loading loading-lg");
   } 
