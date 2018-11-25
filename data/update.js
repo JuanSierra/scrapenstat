@@ -3,16 +3,38 @@ const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
-const keyArrays = ['go', 'js', 'lang', 'react'];
-const KeywordFilter = require('keyword-filter');
+const keyArrays = ['go', 'js', 'golang', 'react'];
 const filter = new KeywordFilter();
+var regex = require('word-regex')();
+
+// Init counter and filter
 var keyCount = [];
 for (const item of keyArrays){
     keyCount[item] = 0;
 };
-console.log(keyCount);
-console.log("va")
 filter.init(keyArrays);
+
+// Customized KeywordFilter for matching words
+function KeywordFilter(){
+    this.keysArray = [];
+    this.init = function(keysArray){
+        this.keysArray = keysArray;
+    }
+
+    this.getOccurances = function(text){
+        var words = text.match(regex);
+        var result = [];
+
+        for (const key of  this.keysArray){
+            if(result.indexOf(key)==-1 
+                && words.indexOf(key)>0){
+                result.push(key);
+            }
+        };
+
+        return result;
+    }
+}
 
 for (const month of config.months) {
     console.log(month.url)
@@ -22,28 +44,20 @@ for (const month of config.months) {
         
         const $ = cheerio.load(body);
         var imgs = $(".athing .ind img[width=\"0\"]");
-        console.log(imgs.length)
+
         imgs.each(function(i, item){
             countKeywordInBody( $(this).closest("tr").text());
-            console.log(keyCount);
         });
+
+        console.log(keyCount);
     });
+   
 }
-
-
 
 function countKeywordInBody(content){
     var occurances = filter.getOccurances(content);
 
-    var words = occurances.map(function (item) {
-        return item.value;
-    });
-    console.log(words)
-    var filtered = words.filter(function(item, index){
-        return words.indexOf(item) >= index; 
-    });
-
-    for (var w of filtered) {
+    for (var w of occurances) {
         if(keyCount.hasOwnProperty(w)) 
             keyCount[w]++;
     };
