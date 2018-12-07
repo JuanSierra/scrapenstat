@@ -6,6 +6,12 @@ const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
 const keyArrays = ['go', 'js', 'golang', 'react'];
 const filter = new KeywordFilter();
 var regex = require('word-regex')();
+var categories = [];
+var months = [];
+
+for (const keyword of config.keywords){
+    categories[keyword.category] = 0;
+};
 
 // Init counter and filter
 var keyCount = [];
@@ -48,17 +54,28 @@ for (const month of config.months) {
         imgs.each(function(i, item){
             countKeywordInBody( $(this).closest("tr").text());
         });
-
-        console.log(keyCount);
+        processMonth(month.name);
+        console.log(months);
     });
-   
 }
 
 function countKeywordInBody(content){
     var occurances = filter.getOccurances(content);
 
     for (var w of occurances) {
-        if(keyCount.hasOwnProperty(w)) 
+        if(keyCount.hasOwnProperty(w))
             keyCount[w]++;
+    };
+}
+
+function processMonth(month){
+    months.push({
+        name: month,
+        data: keyCount
+    });
+    // refactor
+    keyCount = [];
+    for (const item of keyArrays){
+        keyCount[item] = 0;
     };
 }
