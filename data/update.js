@@ -13,6 +13,10 @@ for (const keyword of config.keywords){
     categories[keyword.category] = 0;
 };
 
+console.log('cats')
+console.log(categories)
+
+
 // Init counter and filter
 var keyCount = [];
 for (const item of keyArrays){
@@ -55,9 +59,20 @@ for (const month of config.months) {
             countKeywordInBody( $(this).closest("tr").text());
         });
         processMonth(month.name);
-        console.log(months);
+        console.log(buildOutput());
+        //console.log(months);
     });
 }
+/*
+fs.writeFile("/out", "here", function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("Saved!");
+}); */
+
+
 
 function countKeywordInBody(content){
     var occurances = filter.getOccurances(content);
@@ -78,4 +93,21 @@ function processMonth(month){
     for (const item of keyArrays){
         keyCount[item] = 0;
     };
+}
+
+function buildOutput(){
+    var stats = [];
+
+    for (const item of keyArrays){
+        var word = {name: item, values: [] };
+        for (const month of months){
+            word.values.push({date: month.name, price: month.data[item]})
+        };
+        
+        word.categories = 
+        
+        stats.push(word);
+    };
+
+    return { stats: stats };
 }
