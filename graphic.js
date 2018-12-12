@@ -29,7 +29,7 @@ function extractCategories(){
   };
 
   var categories = uniqueArray(stats.map(function(item){
-    return item.categories.split(" ");
+    return item.categories;
   }).flat());
  
   var category = null;
@@ -55,7 +55,6 @@ function createGraph(){
   // Use the extracted size to set the size of an SVG element.
 
     var width =  $("#chart")[0].clientWidth;
-    console.log($("#chart")[0].clientWidth)
     var height = $("#chart")[0].clientHeight;
     var margin = 50;
     var duration = 250;
@@ -67,12 +66,12 @@ function createGraph(){
     var lineStrokeHover = "2.5px";
     
     var circleOpacity = '0.85';
-    var circleOpacityOnLineHover = "0.25"
+    var circleOpacityOnLineHover = "0.25";
     var circleRadius = 3;
     var circleRadiusHover = 6;
     
     var xTicks = Math.floor(data[0].values.length/2);
-    var yTicks = 5;
+    var yTicks = 100;
   
     var myNode = document.getElementById("chart");
     while (myNode.firstChild) {
@@ -80,7 +79,7 @@ function createGraph(){
     }
 
     /* Format Data */
-    var parseDate = d3.timeParse("%Y");
+    var parseDate = d3.timeParse("%b");
     data.forEach(function(d) { 
       d.values.forEach(function(d) {
         d.date = parseDate(d.date);
@@ -90,11 +89,11 @@ function createGraph(){
     
     /* Scale */
     var xScale = d3.scaleTime()
-      .domain(d3.extent(data[0].values, d => d.date))
+      .domain(d3.extent(data[0].values, d2 => d2.date))
       .range([0, width-margin]);
     
     var yScale = d3.scaleLinear()
-      .domain([0, d3.max(data[0].values, d => d.price)])
+      .domain([0, d3.max(data[0].values, d2 => d2.price)])
       .range([height-margin, 0]);
     
     var color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -164,12 +163,12 @@ function createGraph(){
       .data(d => d.values).enter()
       .append("g")
       .attr("class", "circle")  
-      .on("mouseover", function(d) {
+      .on("mouseover", function(d2) {
           d3.select(this)     
             .style("cursor", "pointer")
             .append("text")
             .attr("class", "text")
-            .text(`${d.price}`)
+            .text(`${d2.price}`)
             .attr("x", d => xScale(d.date) + 5)
             .attr("y", d => yScale(d.price) - 10);
         })
@@ -181,8 +180,8 @@ function createGraph(){
             .selectAll(".text").remove();
         })
       .append("circle")
-      .attr("cx", d => xScale(d.date))
-      .attr("cy", d => yScale(d.price))
+      .attr("cx", d2 => xScale(d2.date))
+      .attr("cy", d2 => yScale(d2.price))
       .attr("r", circleRadius)
       .style('opacity', circleOpacity)
       .on("mouseover", function(d) {

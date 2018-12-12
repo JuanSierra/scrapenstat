@@ -23,8 +23,6 @@ keywords:
         - name: Python
         - name: Node 
           aliases: Node.js, node.js, nodejs
-        - name: Javascript 
-          aliases: JS, js, Electron
         - name: C++
           aliases: c++
         - name: Scala 
@@ -33,7 +31,7 @@ keywords:
         - name: Erlang 
           aliases: Elixir
         - name: C# 
-          aliases: .Net - ASP.NET
+          aliases: .Net, ASP.NET
         - name: Python
           aliases: Django
         - name: GraphQL
