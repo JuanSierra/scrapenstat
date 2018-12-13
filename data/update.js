@@ -24,6 +24,8 @@ for (var keyword of config.keywords){
     categories[keyword.category] = flatted;
     keyArrays = keyArrays.concat(flatted);
 }
+// not the aliases
+var main_words = config.keywords.map(key=>key.words.map(w=>w.name)).flat()
 
 // Remove duplicates
 keyArrays = keyArrays.filter(function(item, pos) {
@@ -49,8 +51,8 @@ function KeywordFilter(){
         var result = [];
 
         for (const key of  this.keysArray){
-            if(result.indexOf(key)==-1 
-                && words.indexOf(key)>0){
+            if(result.indexOf(key) == -1 
+                && words.indexOf(key) > 0){
                 result.push(key);
             }
         }
@@ -106,21 +108,31 @@ function processMonth(month){
 
 function buildOutput(){
     var stats = [];
-    
+
     for (const item of keyArrays){
-        var word = {name: item, values: [], categories: [] };
-        for (const month of months){
-            word.values.push({date: month.name, price: month.data[item]})
+        if(main_words.indexOf(item) > -1){
+            var word = {name: item, values: [], categories: [] };
+            var configWord = config.keywords.map(key=>key.words).flat().find(w=>w.name == item);
+            var aliases = configWord.hasOwnProperty("aliases") ? configWord.aliases.split(',').map(x=>x.trim()) : [];
+
+            for (const month of months){
+                var aliasCont = 0;
+
+                for (const alias of aliases){
+                    aliasCont+= month.data[alias];
+                }
+                word.values.push({date: month.name, price: aliasCont + month.data[item]});
+            }
+            
+            var wordCategories = [];
+            
+            for (let index in categories){
+                if(categories[index].indexOf(item) > -1)
+                    wordCategories.push(index);
+            }
+            word.categories = wordCategories;
+            stats.push(word);
         }
-        
-        var wordCategories = [];
-        
-        for (let index in categories){
-            if(categories[index].indexOf(item)>-1)
-                wordCategories.push(index);
-        }
-        word.categories = wordCategories;
-        stats.push(word);
     }
 
     return { stats: stats };

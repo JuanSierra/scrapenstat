@@ -1,0 +1,1076 @@
+{
+	"stats": [
+		{
+			"name": "Swift",
+			"values": [
+				{
+					"date": "oct",
+					"price": 4
+				},
+				{
+					"date": "sep",
+					"price": 5
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "RxSwift",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Objective-C",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Java",
+			"values": [
+				{
+					"date": "oct",
+					"price": 16
+				},
+				{
+					"date": "sep",
+					"price": 18
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "RxJava",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Kotlin",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 4
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Groovy",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 2
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Ruby",
+			"values": [
+				{
+					"date": "oct",
+					"price": 19
+				},
+				{
+					"date": "sep",
+					"price": 17
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Rails",
+			"values": [
+				{
+					"date": "oct",
+					"price": 8
+				},
+				{
+					"date": "sep",
+					"price": 12
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Rust",
+			"values": [
+				{
+					"date": "oct",
+					"price": 7
+				},
+				{
+					"date": "sep",
+					"price": 2
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "GoLang",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Go",
+			"values": [
+				{
+					"date": "oct",
+					"price": 23
+				},
+				{
+					"date": "sep",
+					"price": 16
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Javascript",
+			"values": [
+				{
+					"date": "oct",
+					"price": 11
+				},
+				{
+					"date": "sep",
+					"price": 9
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "JS",
+			"values": [
+				{
+					"date": "oct",
+					"price": 9
+				},
+				{
+					"date": "sep",
+					"price": 3
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "js",
+			"values": [
+				{
+					"date": "oct",
+					"price": 17
+				},
+				{
+					"date": "sep",
+					"price": 17
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Electron",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 5
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "TypeScript",
+			"values": [
+				{
+					"date": "oct",
+					"price": 7
+				},
+				{
+					"date": "sep",
+					"price": 6
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "TS",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Python",
+			"values": [
+				{
+					"date": "oct",
+					"price": 33
+				},
+				{
+					"date": "sep",
+					"price": 38
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Node",
+			"values": [
+				{
+					"date": "oct",
+					"price": 20
+				},
+				{
+					"date": "sep",
+					"price": 20
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Node.js",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "node.js",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "nodejs",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "C++",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "c++",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Scala",
+			"values": [
+				{
+					"date": "oct",
+					"price": 4
+				},
+				{
+					"date": "sep",
+					"price": 5
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "scala",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Clojure",
+			"values": [
+				{
+					"date": "oct",
+					"price": 3
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Erlang",
+			"values": [
+				{
+					"date": "oct",
+					"price": 3
+				},
+				{
+					"date": "sep",
+					"price": 5
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Elixir",
+			"values": [
+				{
+					"date": "oct",
+					"price": 12
+				},
+				{
+					"date": "sep",
+					"price": 3
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "C#",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": ".Net",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "ASP.NET",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Django",
+			"values": [
+				{
+					"date": "oct",
+					"price": 7
+				},
+				{
+					"date": "sep",
+					"price": 4
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "GraphQL",
+			"values": [
+				{
+					"date": "oct",
+					"price": 8
+				},
+				{
+					"date": "sep",
+					"price": 10
+				}
+			],
+			"categories": [
+				"Languages"
+			]
+		},
+		{
+			"name": "Postgres",
+			"values": [
+				{
+					"date": "oct",
+					"price": 8
+				},
+				{
+					"date": "sep",
+					"price": 10
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "PostgreSQL",
+			"values": [
+				{
+					"date": "oct",
+					"price": 11
+				},
+				{
+					"date": "sep",
+					"price": 7
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "Cassandra",
+			"values": [
+				{
+					"date": "oct",
+					"price": 4
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "MongoDB",
+			"values": [
+				{
+					"date": "oct",
+					"price": 6
+				},
+				{
+					"date": "sep",
+					"price": 3
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "Mongo",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 2
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "Redis",
+			"values": [
+				{
+					"date": "oct",
+					"price": 7
+				},
+				{
+					"date": "sep",
+					"price": 7
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "DynamoDB",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "Dynamo",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "SQL",
+			"values": [
+				{
+					"date": "oct",
+					"price": 6
+				},
+				{
+					"date": "sep",
+					"price": 5
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "Aurora",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "MySQL",
+			"values": [
+				{
+					"date": "oct",
+					"price": 5
+				},
+				{
+					"date": "sep",
+					"price": 10
+				}
+			],
+			"categories": [
+				"DB related"
+			]
+		},
+		{
+			"name": "Azure",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 3
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "AWS",
+			"values": [
+				{
+					"date": "oct",
+					"price": 21
+				},
+				{
+					"date": "sep",
+					"price": 26
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "S3",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "GCP",
+			"values": [
+				{
+					"date": "oct",
+					"price": 3
+				},
+				{
+					"date": "sep",
+					"price": 2
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "google cloud",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "Docker",
+			"values": [
+				{
+					"date": "oct",
+					"price": 10
+				},
+				{
+					"date": "sep",
+					"price": 14
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "Kubernetes",
+			"values": [
+				{
+					"date": "oct",
+					"price": 14
+				},
+				{
+					"date": "sep",
+					"price": 13
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "Heroku",
+			"values": [
+				{
+					"date": "oct",
+					"price": 3
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Devop related"
+			]
+		},
+		{
+			"name": "React",
+			"values": [
+				{
+					"date": "oct",
+					"price": 35
+				},
+				{
+					"date": "sep",
+					"price": 48
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "ReactJS",
+			"values": [
+				{
+					"date": "oct",
+					"price": 3
+				},
+				{
+					"date": "sep",
+					"price": 4
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "React.js",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "Flow",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "React-Native",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "Angular",
+			"values": [
+				{
+					"date": "oct",
+					"price": 6
+				},
+				{
+					"date": "sep",
+					"price": 9
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "AngularJS",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "Angular.js",
+			"values": [
+				{
+					"date": "oct",
+					"price": 0
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "Vue",
+			"values": [
+				{
+					"date": "oct",
+					"price": 6
+				},
+				{
+					"date": "sep",
+					"price": 7
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "VueJS",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "jQuery",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 2
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "Ember",
+			"values": [
+				{
+					"date": "oct",
+					"price": 2
+				},
+				{
+					"date": "sep",
+					"price": 1
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		},
+		{
+			"name": "EmberJS",
+			"values": [
+				{
+					"date": "oct",
+					"price": 1
+				},
+				{
+					"date": "sep",
+					"price": 0
+				}
+			],
+			"categories": [
+				"Frontend related"
+			]
+		}
+	]
+}
