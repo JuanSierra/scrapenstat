@@ -65,13 +65,13 @@ function createGraph(){
     var lineStroke = "1.5px";
     var lineStrokeHover = "2.5px";
     
-    var circleOpacity = '0.85';
+    var circleOpacity = "0.85";
     var circleOpacityOnLineHover = "0.25";
     var circleRadius = 3;
     var circleRadiusHover = 6;
     
     var xTicks = Math.floor(data[0].values.length/2);
-    var yTicks = 100;
+    var yTicks = Math.floor(Math.max(...data.map(x=>x.values).flat().map(x=>x.price))/5);
   
     var myNode = document.getElementById("chart");
     while (myNode.firstChild) {
@@ -91,9 +91,10 @@ function createGraph(){
     var xScale = d3.scaleTime()
       .domain(d3.extent(data[0].values, d2 => d2.date))
       .range([0, width-margin]);
-    
+
     var yScale = d3.scaleLinear()
-      .domain([0, d3.max(data[0].values, d2 => d2.price)])
+      //.domain([0, d3.max(data[0].values, d => d.price)])
+      .domain([0, Math.max(...data.map(x=>x.values).flat().map(x=>x.price))])
       .range([height-margin, 0]);
     
     var color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -120,7 +121,7 @@ function createGraph(){
       .on("mouseover", function(d, i) {
           svg.append("text")
             .attr("class", "title-text")
-            .style("fill", color(i))        
+            .style("fill", color(i))     
             .text(d.name)
             .attr("text-anchor", "middle")
             .attr("x", (width-margin)/2)
@@ -198,9 +199,9 @@ function createGraph(){
           });
     
     /* Add Axis into SVG */
-    var xAxis = d3.axisBottom(xScale).ticks(xTicks);
+    var xAxis = d3.axisBottom(xScale).ticks(xTicks).tickFormat(d3.timeFormat("%b"));
     var yAxis = d3.axisLeft(yScale).ticks(yTicks);
-    
+
     svg.append("g")
       .attr("class", "x axis")
       .attr("transform", `translate(0, ${height-margin})`)
@@ -216,5 +217,4 @@ function createGraph(){
       .text("      Hits");
 
       $("#chart").removeClass("loading loading-lg");
-  } 
-  
+  }

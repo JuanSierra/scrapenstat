@@ -2,10 +2,11 @@ const yaml = require('js-yaml');
 const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
-const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
-let keyArrays = []; //= ['go', 'js', 'golang', 'react'];
-const filter = new KeywordFilter();
 var regex = require('word-regex')();
+const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
+
+let keyArrays = []; 
+const filter = new KeywordFilter();
 var categories = [];
 var months = [];
 
@@ -33,7 +34,7 @@ keyArrays = keyArrays.filter(function(item, pos) {
 var keyCount = [];
 for (const item of keyArrays){
     keyCount[item] = 0;
-};
+}
 filter.init(keyArrays);
 
 // Customized KeywordFilter for matching words
@@ -52,7 +53,7 @@ function KeywordFilter(){
                 && words.indexOf(key)>0){
                 result.push(key);
             }
-        };
+        }
 
         return result;
     }
@@ -61,8 +62,8 @@ function KeywordFilter(){
 for (const month of config.months) {
     console.log(month.url)
     request(month.url, function (error, response, body) {
-        console.log('error:', error); // Print the error if one occurred
-        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        console.log('error:', error);
+        console.log('statusCode:', response && response.statusCode);
         
         const $ = cheerio.load(body);
         var imgs = $(".athing .ind img[width=\"0\"]");
@@ -88,7 +89,7 @@ function countKeywordInBody(content){
     for (var w of occurances) {
         if(keyCount.hasOwnProperty(w))
             keyCount[w]++;
-    };
+    }
 }
 
 function processMonth(month){
@@ -100,7 +101,7 @@ function processMonth(month){
     keyCount = [];
     for (const item of keyArrays){
         keyCount[item] = 0;
-    };
+    }
 }
 
 function buildOutput(){
@@ -115,15 +116,12 @@ function buildOutput(){
         var wordCategories = [];
         
         for (let index in categories){
-            console.log(categories[index])
-            console.log(item)
-            console.log(categories[index].indexOf(item))
             if(categories[index].indexOf(item)>-1)
                 wordCategories.push(index);
-        };
+        }
         word.categories = wordCategories;
         stats.push(word);
-    };
+    }
 
     return { stats: stats };
 }
