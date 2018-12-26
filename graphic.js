@@ -2,7 +2,7 @@
 var stats;
 window.addEventListener("resize", createGraph);
 
-$.getJSON('data/stats.json', function(data) {
+$.getJSON('stats.json', function(data) {
   stats = data.stats;
   extractCategories();
   createGraph();

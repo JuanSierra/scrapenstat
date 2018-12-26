@@ -4,8 +4,9 @@
   "description": "",
   "main": "data/update.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -t reactify app/js/main.js | uglifyjs -mc > static/bundle.js"
+    "start": "http-server ./docs",
+    "build": "node data/update.js",
+    "pub": "node-minify --compressor uglify-es --input graphic.js --output docs/output.js | node-minify --compressor clean-css --input style.css --output docs/style.css | cp index.html docs/ | cp data/stats.json docs/"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,11 @@
     "js-yaml": "^3.12.0",
     "request": "^2.88.0",
     "word-regex": "^0.1.2"
+  },
+  "devDependencies": {
+    "@node-minify/clean-css": "^4.0.2",
+    "@node-minify/cli": "^4.0.2",
+    "@node-minify/uglify-es": "^4.0.2",
+    "http-server": "^0.11.1"
   }
 }
