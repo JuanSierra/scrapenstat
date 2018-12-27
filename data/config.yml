@@ -1,15 +1,36 @@
 months:
-    - name: sept
+    - name: jan
+      url: https://news.ycombinator.com/item?id=16052538
+    - name: feb
+      url: https://news.ycombinator.com/item?id=16282819
+    - name: mar
+      url: https://news.ycombinator.com/item?id=16492994
+    - name: apr
+      url: https://news.ycombinator.com/item?id=16735011
+    - name: may
+      url: https://news.ycombinator.com/item?id=16967543
+    - name: jun
+      url: https://news.ycombinator.com/item?id=17205865
+    - name: jul
+      url: https://news.ycombinator.com/item?id=17442187
+    - name: ago
+      url: https://news.ycombinator.com/item?id=17663077
+    - name: sep
       url: https://news.ycombinator.com/item?id=17902901
     - name: oct
       url: https://news.ycombinator.com/item?id=18113144
+    - name: nov
+      url: https://news.ycombinator.com/item?id=18354503
+    - name: dec
+      url: https://news.ycombinator.com/item?id=18589702
 keywords:
     - category: Languages
       words:
         - name: Swift 
           aliases: RxSwift
-        - name: Objective-C 
-        - name: Java 
+        - name: Objective-C
+          aliases: objective-c
+        - name: Java
           aliases: RxJava, Kotlin, Groovy
         - name: Ruby 
           aliases: Rails
@@ -31,7 +52,7 @@ keywords:
         - name: Erlang 
           aliases: Elixir
         - name: C# 
-          aliases: .Net, ASP.NET
+          aliases: c#, .Net, ASP.NET
         - name: Python
           aliases: Django
         - name: GraphQL
@@ -61,9 +82,9 @@ keywords:
     - category: Frontend related
       words:
         - name: React
-          aliases: ReactJS, React.js, Flow, React-Native
+          aliases: ReactJS, react.js, Flow, React-Native
         - name: Angular 
-          aliases: AngularJS, Angular.js
+          aliases: AngularJS, angular.js
         - name: Vue 
           aliases: VueJS
         - name: jQuery

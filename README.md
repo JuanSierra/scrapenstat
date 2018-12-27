@@ -1,4 +1,4 @@
-# Scrap 'n Stats (WiH HN)
+# Scrap 'n' Stats (WiH HN)
 Allows to do web scraping for job related posts published in HN.  Get content from links configured and make an statistics graphic based on it
 
 # Installation

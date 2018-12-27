@@ -3,10 +3,13 @@ const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
 var regex = require('word-regex')();
-const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
+const KeywordFilter = require('keyword-filter');
+const config = yaml.safeLoad(fs.readFileSync('data/config.yml', 'utf8'));
 
+const ROOT_POST_SELECTOR = ".athing .ind img[width=\"0\"]";
+const REQUEST_DELAY = 10000;
 let keyArrays = []; 
-const filter = new KeywordFilter();
+const filter = new CustomFilter();
 var categories = [];
 var months = [];
 
@@ -24,8 +27,8 @@ for (var keyword of config.keywords){
     categories[keyword.category] = flatted;
     keyArrays = keyArrays.concat(flatted);
 }
-// not the aliases
-var main_words = config.keywords.map(key=>key.words.map(w=>w.name)).flat()
+// Don't select the aliases
+var main_words = config.keywords.map(key=>key.words.map(w=>w.name)).flat();
 
 // Remove duplicates
 keyArrays = keyArrays.filter(function(item, pos) {
@@ -39,21 +42,37 @@ for (const item of keyArrays){
 }
 filter.init(keyArrays);
 
-// Customized KeywordFilter for matching words
-function KeywordFilter(){
+// Mixed strategy, customized CustomFilter for matching COMPLETE words and 
+// specific library for words with special characters
+function CustomFilter(){
     this.keysArray = [];
+    this.specialKeysArray = [];
+    this.specialFilter = new KeywordFilter();
+
     this.init = function(keysArray){
         this.keysArray = keysArray;
+        this.specialKeysArray = keysArray.filter(function(item){ 
+            if(item.match(/[^a-zA-Z0-9]/))
+                return item;
+        });
+        this.specialFilter.init(this.specialKeysArray);
     }
 
     this.getOccurances = function(text){
         var words = text.match(regex);
         var result = [];
 
-        for (const key of  this.keysArray){
-            if(result.indexOf(key) == -1 
-                && words.indexOf(key) > 0){
+        for (const key of this.keysArray){
+            if(result.indexOf(key) == -1 && words.indexOf(key) > 0){
                 result.push(key);
+            }
+        }
+
+        var specialOccurances = this.specialFilter.getOccurances(text);
+
+        for (const obj of specialOccurances){
+            if(result.indexOf(obj.value) == -1){
+                result.push(obj.value);
             }
         }
 
@@ -61,26 +80,25 @@ function KeywordFilter(){
     }
 }
 
+var req_cont = 0;
+
 for (const month of config.months) {
-    console.log(month.url)
-    request(month.url, function (error, response, body) {
-        console.log('error:', error);
-        console.log('statusCode:', response && response.statusCode);
-        
+    setTimeout(request, REQUEST_DELAY * req_cont++, month.url, function (error, response, body) {
+        console.log("Processing started: " + month.name);
         const $ = cheerio.load(body);
-        var imgs = $(".athing .ind img[width=\"0\"]");
+        var imgs = $(ROOT_POST_SELECTOR);
 
         imgs.each(function(i, item){
             countKeywordInBody( $(this).closest("tr").text());
         });
         processMonth(month.name);
 
-        fs.writeFile("./stats_out.js", JSON.stringify(buildOutput()), function(err) {
+        fs.writeFile("data/stats.json", JSON.stringify(buildOutput()), function(err) {
             if(err) {
                 return console.log(err);
             }
         
-            console.log("Saved!");
+            console.log(month.name + " Saved!");
         });
     });
 }
@@ -89,6 +107,10 @@ function countKeywordInBody(content){
     var occurances = filter.getOccurances(content);
 
     for (var w of occurances) {
+        if(w=='Objective-C'){
+            console.log(keyCount);
+            console.log(w+" "+keyCount.hasOwnProperty(w));
+        }
         if(keyCount.hasOwnProperty(w))
             keyCount[w]++;
     }

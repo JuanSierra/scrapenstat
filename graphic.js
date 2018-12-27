@@ -213,7 +213,7 @@ function createGraph(){
       .append('text')
       .attr("y", 15)
       .attr("transform", "rotate(-90)")
-      .attr("fill", "#000")
+      .attr("fill", "#d3d3d3")
       .text("      Hits");
 
       $("#chart").removeClass("loading loading-lg");

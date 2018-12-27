@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <link rel="icon" type="image/png" href="bars.png">
     <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -13,15 +15,18 @@
   </head>
   <body>
       <div class="container">
-        <h2>2018 Job Trends</h2>
-        <h4>HN WhoisHiring</h4>
+        <h3>2018 Job Trends</h3>
+        <h5>HN WhoisHiring</h5>
         <div class="graph-container">
           <div id="chart"></div>
           <ul id="convs"></ul>
         </div>
-        <div style="margin-top:15px; ">
+        <div class="categories">
           <select id="categories" class="form-select select-sm" onchange="createGraph()">
           </select>
+        </div>
+        <div class="footer">
+          Feel free to play with the &nbsp;<a href="https://github.com/JuanSierra/scrapenstat">source code</a>&nbsp; and experiment
         </div>
       </div>
     <script src="graphic.js"></script>
