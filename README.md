@@ -1,5 +1,5 @@
 # Scrap 'n' Stats (WiH HN)
-This project allows to do web scraping for job related posts published in HackerNews.  It gets the content from the url's configured and procces it to make a statistics graphic based on it.
+This project allows to do web scraping for job related posts published in HackerNews.  It gets the content from the url's configured and procces it to make a bars graphic based on it.
 
 # Installation
 ```sh
@@ -61,7 +61,8 @@ Each configuration part is described below:
 D3 work credits to [@zakariachowdhury](https://github.com/zakariachowdhury)
 
 # Disclaimer
-* Defined all the keywords manually based on only one month.  Any additions are available from modifying configuration ([config.yml](https://github.com/JuanSierra/scrapenstat/blob/master/data/config.yml)).
+* **Hits** refers to the number of posts a keyword is mentioned for a particular month.  This value could give you any notion of importance but is not the intent to reflects any kind of statistical meaning.
+* I defined all the keywords manually based on the data I get from only a single month (october 2018).  Any additions are available from modifying the configuration ([config.yml](https://github.com/JuanSierra/scrapenstat/blob/master/data/config.yml)).
 * Categorization was done also arbitrary and you are invited to re arrange groups in a more interesting way.
 * I Used a mixed strategy to get the most reliable data from the job posts content, we are talking about natural language so the process is open to have a minimum error.
 
