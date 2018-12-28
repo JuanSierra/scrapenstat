@@ -1,4 +1,3 @@
-//D3 work Credits to @zakariachowdhury 
 var stats;
 window.addEventListener("resize", createGraph);
 
@@ -71,7 +70,7 @@ function createGraph(){
     var circleRadiusHover = 6;
     
     var xTicks = Math.floor(data[0].values.length/2);
-    var yTicks = Math.floor(Math.max(...data.map(x=>x.values).flat().map(x=>x.price))/5);
+    var yTicks = Math.floor(Math.max(...data.map(x=>x.values).flat().map(x=>x.hits))/5);
   
     var myNode = document.getElementById("chart");
     while (myNode.firstChild) {
@@ -83,7 +82,7 @@ function createGraph(){
     data.forEach(function(d) { 
       d.values.forEach(function(d) {
         d.date = parseDate(d.date);
-        d.price = +d.price;
+        d.hits = +d.hits;
       });
     });
     
@@ -93,8 +92,7 @@ function createGraph(){
       .range([0, width-margin]);
 
     var yScale = d3.scaleLinear()
-      //.domain([0, d3.max(data[0].values, d => d.price)])
-      .domain([0, Math.max(...data.map(x=>x.values).flat().map(x=>x.price))])
+      .domain([0, Math.max(...data.map(x=>x.values).flat().map(x=>x.hits))])
       .range([height-margin, 0]);
     
     var color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -109,7 +107,7 @@ function createGraph(){
     /* Add line into SVG */
     var line = d3.line()
       .x(d => xScale(d.date))
-      .y(d => yScale(d.price));
+      .y(d => yScale(d.hits));
     
     let lines = svg.append('g')
       .attr('class', 'lines');
@@ -169,9 +167,9 @@ function createGraph(){
             .style("cursor", "pointer")
             .append("text")
             .attr("class", "text")
-            .text(`${d2.price}`)
+            .text(`${d2.hits}`)
             .attr("x", d => xScale(d.date) + 5)
-            .attr("y", d => yScale(d.price) - 10);
+            .attr("y", d => yScale(d.hits) - 10);
         })
       .on("mouseout", function(d) {
           d3.select(this)
@@ -182,7 +180,7 @@ function createGraph(){
         })
       .append("circle")
       .attr("cx", d2 => xScale(d2.date))
-      .attr("cy", d2 => yScale(d2.price))
+      .attr("cy", d2 => yScale(d2.hits))
       .attr("r", circleRadius)
       .style('opacity', circleOpacity)
       .on("mouseover", function(d) {

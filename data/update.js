@@ -7,7 +7,7 @@ const KeywordFilter = require('keyword-filter');
 const config = yaml.safeLoad(fs.readFileSync('data/config.yml', 'utf8'));
 
 const ROOT_POST_SELECTOR = ".athing .ind img[width=\"0\"]";
-const REQUEST_DELAY = 10000;
+const REQUEST_DELAY = 10000; //HN robotstxt suggests 30 sec
 let keyArrays = []; 
 const filter = new CustomFilter();
 var categories = [];
@@ -56,7 +56,7 @@ function CustomFilter(){
                 return item;
         });
         this.specialFilter.init(this.specialKeysArray);
-    }
+    };
 
     this.getOccurances = function(text){
         var words = text.match(regex);
@@ -77,7 +77,7 @@ function CustomFilter(){
         }
 
         return result;
-    }
+    };
 }
 
 var req_cont = 0;
@@ -107,10 +107,6 @@ function countKeywordInBody(content){
     var occurances = filter.getOccurances(content);
 
     for (var w of occurances) {
-        if(w=='Objective-C'){
-            console.log(keyCount);
-            console.log(w+" "+keyCount.hasOwnProperty(w));
-        }
         if(keyCount.hasOwnProperty(w))
             keyCount[w]++;
     }
@@ -121,7 +117,7 @@ function processMonth(month){
         name: month,
         data: keyCount
     });
-    // refactor
+
     keyCount = [];
     for (const item of keyArrays){
         keyCount[item] = 0;
@@ -143,7 +139,7 @@ function buildOutput(){
                 for (const alias of aliases){
                     aliasCont+= month.data[alias];
                 }
-                word.values.push({date: month.name, price: aliasCont + month.data[item]});
+                word.values.push({date: month.name, hits: aliasCont + month.data[item]});
             }
             
             var wordCategories = [];

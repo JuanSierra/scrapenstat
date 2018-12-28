@@ -6,7 +6,7 @@
   "scripts": {
     "start": "http-server ./docs",
     "build": "node data/update.js",
-    "pub": "node-minify --compressor uglify-es --input graphic.js --output docs/graphic.js | node-minify --compressor clean-css --input style.css --output docs/style.css | cp index.html docs/ | cp data/stats.json docs/"
+    "publish": "node-minify --compressor uglify-es --input graphic.js --output docs/graphic.js | node-minify --compressor clean-css --input style.css --output docs/style.css | cp index.html docs/ | cp data/stats.json docs/"
   },
   "keywords": [],
   "author": "",
