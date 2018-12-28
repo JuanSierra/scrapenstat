@@ -4,7 +4,7 @@ This project allows to do web scraping for job related posts published in Hacker
 # Installation
 ```sh
 git clone https://github.com/JuanSierra/scrapenstat.git
-
+cd scrapenstat
 npm install
 ```
 
