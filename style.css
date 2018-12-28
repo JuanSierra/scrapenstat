@@ -91,18 +91,22 @@ svg{
         width:100%;
         height:480px
     }
+    .footer{
+        margin-top:0;
+        margin-left:0;
+    }
 }
 @media only screen and (min-width:576px){
     .container{
-        height:80%;
+        height:90%;
     }
     .graph-container{
         flex-direction:row;
-        order: 1
+        order: 2
     }
     .categories{
         margin-top:10px;
-        order: 2
+        order: 1
     }
     #convs{
         flex-direction:column;
