@@ -1,7 +1,11 @@
 {
-  "name": "data",
+  "name": "scrapenstat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web scraping for job posts published in HN. It gets the content from the configured url's and process it to show a statistics graphic",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JuanSierra/scrapenstat"
+  },
   "main": "data/update.js",
   "scripts": {
     "start": "http-server ./docs",
@@ -9,8 +13,8 @@
     "publish": "node-minify --compressor uglify-es --input graphic.js --output docs/graphic.js | node-minify --compressor clean-css --input style.css --output docs/style.css | cp index.html docs/ | cp data/stats.json docs/"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Juan Sierra",
+  "license": "apache-2.0",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "js-yaml": "^3.12.0",
