@@ -26,36 +26,37 @@ months:
 keywords:
     - category: Languages
       words:
-        - name: Swift 
-          aliases: RxSwift
-        - name: Objective-C
-          aliases: objective-c
         - name: Java
           aliases: RxJava, Kotlin, Groovy
         - name: Ruby 
           aliases: Rails
-        - name: Rust
-        - name: GoLang 
-          aliases: Go
         - name: Javascript 
           aliases: JS, js, Electron
-        - name: TypeScript 
-          aliases: TS
         - name: Python
-        - name: Node 
-          aliases: Node.js, node.js, nodejs
         - name: C++
           aliases: c++
-        - name: Scala 
-          aliases: scala
-        - name: Clojure
         - name: Erlang 
           aliases: Elixir
         - name: C# 
           aliases: c#, .Net, ASP.NET
         - name: Python
           aliases: Django
-        - name: GraphQL
+    - category: Newcomers Languages
+      words:
+        - name: Swift 
+          aliases: RxSwift
+        - name: Objective-C
+          aliases: objective-c
+        - name: GoLang 
+          aliases: Go
+        - name: Scala 
+          aliases: scala
+        - name: Clojure
+        - name: Node 
+          aliases: Node.js, node.js, nodejs
+        - name: TypeScript 
+          aliases: TS
+        - name: Rust
     - category: DB related
       words:
         - name: Postgres 
@@ -69,6 +70,7 @@ keywords:
         - name: SQL 
         - name: Aurora
         - name: MySQL
+        - name: GraphQL
     - category: Devop related
       words:
         - name: Azure 
