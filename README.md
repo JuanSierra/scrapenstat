@@ -1,5 +1,5 @@
 # Scrap 'n' Stats (WiH HN)
-This project allows to do web scraping for job related posts published in HackerNews.  It gets the content from the url's configured and procces it to make a bars graphic based on it.
+This project allows to do web scraping for job related posts published in HackerNews.  It gets the content from the url's configured and process it to make a line graph based on it.
 
 # Installation
 ```sh
