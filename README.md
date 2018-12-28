@@ -11,7 +11,7 @@ npm install
 # Usage
 
 ## Start the local server
-The basic usage of the project is to start a server locally with the current processed data for all the 12 months in 2018.  It deploys by default in http://localhost:8080
+The basic usage of the project is to start a server locally with the current processed data for all the 12 months in 2018.  It deploys the docs folder content by default at http://localhost:8080
 
 ```sh
 npm start
@@ -34,13 +34,13 @@ The current structure is described below and it is detailed in the config sectio
       * aliases
 
 ## Process the configuration
-If you changed the configuration in any way and you want to run the process again, the result is a new stats.json file and you just need to run the following.  :
+If you changed the configuration in any way and you want to run the process again you just need to run the following:
 
 ```sh
 npm run build
 ```
 
-I tried to use the simplest pipeline to compress the js and css files. I'm using github docs folder to publish the static files.  
+the result is a new `stats.json` file in the data folder, then you can publish (it means minify and copy) that file and all the other static files with:
 
 ```sh
 npm run publish
