@@ -8,7 +8,7 @@ const config = yaml.safeLoad(fs.readFileSync('data/config.yml', 'utf8'));
 
 const ROOT_POST_SELECTOR = ".athing .ind img[width=\"0\"]";
 const REQUEST_DELAY = 10000; //HN robotstxt suggests 30 sec
-let keyArrays = []; 
+let keyArrays = [];
 const filter = new CustomFilter();
 var categories = [];
 var months = [];
@@ -83,8 +83,8 @@ function CustomFilter(){
 var req_cont = 0;
 
 for (const month of config.months) {
+	console.log("Processing started: " + month.name);
     setTimeout(request, REQUEST_DELAY * req_cont++, month.url, function (error, response, body) {
-        console.log("Processing started: " + month.name);
         const $ = cheerio.load(body);
         var imgs = $(ROOT_POST_SELECTOR);
 

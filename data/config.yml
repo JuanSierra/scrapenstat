@@ -1,28 +1,28 @@
 months:
     - name: jan
-      url: https://news.ycombinator.com/item?id=16052538
+      url: https://news.ycombinator.com/item?id=18807017
     - name: feb
-      url: https://news.ycombinator.com/item?id=16282819
+      url: https://news.ycombinator.com/item?id=19055166
     - name: mar
-      url: https://news.ycombinator.com/item?id=16492994
+      url: https://news.ycombinator.com/item?id=19281834
     - name: apr
-      url: https://news.ycombinator.com/item?id=16735011
+      url: https://news.ycombinator.com/item?id=19543940
     - name: may
-      url: https://news.ycombinator.com/item?id=16967543
+      url: https://news.ycombinator.com/item?id=19797594
     - name: jun
-      url: https://news.ycombinator.com/item?id=17205865
+      url: https://news.ycombinator.com/item?id=20083795
     - name: jul
-      url: https://news.ycombinator.com/item?id=17442187
+      url: https://news.ycombinator.com/item?id=20325925
     - name: aug
-      url: https://news.ycombinator.com/item?id=17663077
+      url: https://news.ycombinator.com/item?id=20584311
     - name: sep
-      url: https://news.ycombinator.com/item?id=17902901
+      url: https://news.ycombinator.com/item?id=20867123
     - name: oct
-      url: https://news.ycombinator.com/item?id=18113144
+      url: https://news.ycombinator.com/item?id=21126014
     - name: nov
-      url: https://news.ycombinator.com/item?id=18354503
+      url: https://news.ycombinator.com/item?id=21419536
     - name: dec
-      url: https://news.ycombinator.com/item?id=18589702
+      url: https://news.ycombinator.com/item?id=21683554
 keywords:
     - category: Languages
       words:

@@ -5,7 +5,6 @@ $.getJSON('stats.json', function(data) {
   stats = data.stats;
   extractCategories();
   createGraph();
-  
 });
 
 function createConventions(data){
@@ -71,6 +70,7 @@ function createGraph(){
     
     var xTicks = Math.floor(data[0].values.length/2);
     var yTicks = Math.floor(Math.max(...data.map(x=>x.values).flat().map(x=>x.hits))/5);
+  console.log('debugging ' + yTicks);
   
     var myNode = document.getElementById("chart");
     while (myNode.firstChild) {
